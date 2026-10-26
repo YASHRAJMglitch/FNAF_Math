@@ -1,0 +1,643 @@
+using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+int currenthealth = 3;
+
+int freddyHealth = 4;
+
+int QuestionNo = 1;
+
+
+for (; currenthealth != 0 || freddyHealth != 0 || QuestionNo >8;)
+{
+    HealthBar(currenthealth, freddyHealth);
+
+    Console.WriteLine("\n");
+
+    Console.WriteLine("\t\t\t\t|| Five Nights at Console Freddy ||");
+
+    Console.WriteLine("\n");
+
+    Console.WriteLine("Defeat fready by Completing the task or get SLIMED.\n");
+    
+    string player = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""`-'""}
+                                                                     (o o)
+                                                                     ,`Y'.
+                                                                    / ,-. \        
+          ~o                                                       (_)| |(_)
+          /|>                                                        /`_'\
+          /\                                                        (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.Write($"{player}");
+
+    Console.WriteLine("\t\t\tYOU WILL HAVE TO SOLVE MATH PROBLEMS TO ATTACK OR DEFEND!\n");
+
+    while (QuestionNo != 8)
+    {
+        if (QuestionNo == 1)
+        {
+            Console.WriteLine("What is the sum of all integer values of x that satisfy |x| < 3 ?");
+            int user_answer = Answer();
+            if (user_answer == 0)
+            {
+                Console.WriteLine("Congrats! -1 Freddy Health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("Ooo.. That's the wrong answer!");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+
+        } 
+        
+        if (QuestionNo == 2)
+        {
+            Console.WriteLine("What is  8 - 3 * 2 + 6 / 2 ?");
+            int user_answer = Answer();
+            if (user_answer == 5)
+            {
+                Console.WriteLine("Damn! You are good at this, -1 Freddy Health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("Oo.. That's the wrong answer, should have paid attention to PEMDAS in school.");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+
+        if (QuestionNo == 3)
+        {
+            Console.WriteLine("If a $100 item is marked down by 20%, and then the new price is increased by 20%, what is the final price?");
+            int user_answer = Answer();
+            if (user_answer == 96)
+            {
+                Console.WriteLine("Damn! Seems like its time to increase difficulty, -1 Freddy Health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("Hmm Nah Wrong Answer! Careful with the details.");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+
+        if (QuestionNo == 4)
+        {
+            Console.WriteLine("Solve for x: 3(x - 2) - 2(x - 3) = 5");
+            int user_answer = Answer();
+            if (user_answer == 5)
+            {
+                Console.WriteLine("Congrats! -1 freddy health, Its time for the big Guns.");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("How can someone be so bad at math! New record.");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+
+        if (QuestionNo == 5)
+        {
+            Console.WriteLine("What is the value of -3^2 + (-3)^2 ?, (^ is the raised to operator)");
+            int user_answer = Answer();
+            if (user_answer == 0)
+            {
+                Console.WriteLine("Hmm What can I say but CORRECT! -1 freddy health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("I am losing hope now. Even freddy feels sorry now.");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+
+        if (QuestionNo == 6)
+        {
+            Console.WriteLine("A water lily doubles in size every day. If it covers a whole pond in 30 days, how many days did it take to cover exactly half of the pond?");
+            int user_answer = Answer();
+            if (user_answer == 29)
+            {
+                Console.WriteLine("Well that's Correct! well done. -1 freddy health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("Wrong... Wrong... Wrong...");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+
+        if (QuestionNo == 7)
+        {
+            Console.WriteLine("If x + y = 10 and x - y = 4, what is the value of x^2 - y^2 ?");
+            int user_answer = Answer();
+            if (user_answer == 40)
+            {
+                Console.WriteLine("Yup Correct! Come on you got this. -1 freddy health");
+                if (currenthealth < 3) currenthealth++;
+                freddyHealth--;
+            } else
+            {
+                Console.WriteLine("I am tired boss, what didn't you focused in school.");
+                currenthealth--;
+            }
+            QuestionNo++;
+            PnextQuestion();
+            break;
+        }
+    }
+
+    Console.Clear();
+
+    if (currenthealth == 0 || freddyHealth == 0)
+    {
+        break;
+    }
+    if (QuestionNo > 7)
+    {
+        break;
+    }
+
+    Console.Clear();
+    
+
+     
+    
+}
+
+if (freddyHealth !=0 && currenthealth != 0)
+    
+{
+    for (int deathscreen = 0; deathscreen < 10; deathscreen++)
+    {
+        Console.WriteLine("");
+    }
+    Console.WriteLine("\t\t\t\tFreddy is fed up with questions.");
+    Console.WriteLine("\t\t\tYou are alive but so it freddy! Your are about to get slimed out.");
+    Console.WriteLine("\t\t\t\tPress any button to quit.");
+    Console.ReadKey();
+    for (int deathscreen = 0; deathscreen < 10; deathscreen++)
+    {
+        Console.WriteLine("");
+    }
+}
+
+
+
+
+
+
+if (freddyHealth == 0) {
+    Task.Run(() => {
+        int[] marioNotes = { 659, 659, 659, 523, 659, 784, 392 }; // E5, E5, E5, C5, E5, G5, G4
+        int[] marioDurations = { 100, 100, 100, 100, 100, 250, 300 };
+
+        for (int i = 0; i < marioNotes.Length; i++)
+        {
+            Console.Beep(marioNotes[i], marioDurations[i]);
+            Thread.Sleep(30);
+        }
+
+    });
+    
+    PlayerWins();
+    for (int winscreen = 0; winscreen < 10; winscreen++)
+    {
+        Console.WriteLine("");
+    }
+    Console.WriteLine("\t\t\tCongrats! You should be working for NASA. \n\t\t\t\tHope You enjoyed the game.\n\t\tFeel free to start again and enter wrong answers there is surprise in the end.");
+    Console.WriteLine("\n");
+    
+    for (int winscreen = 0; winscreen < 10; winscreen++)
+    {
+        Console.WriteLine("");
+    }
+
+    int[] notes = { 523, 659, 784, 1046 }; 
+    int[] durations = { 120, 120, 120, 350 };
+
+    for (int i = 0; i < notes.Length; i++)
+    {
+        Console.Beep(notes[i], durations[i]);
+        System.Threading.Thread.Sleep(40); 
+    }
+    Console.WriteLine("\t\t\t\tPress any key to exit: ");
+    Console.ReadKey();
+
+}
+
+if (currenthealth == 0)
+{
+    Task.Run(() => {
+        int[] jumpscareNotes = { 150, 130, 110, 80 };
+        int[] jumpscareDurations = { 200, 200, 200, 600 };
+
+        for (int i = 0; i < jumpscareNotes.Length; i++)
+        {
+            Console.Beep(jumpscareNotes[i], jumpscareDurations[i]);
+        }
+    });
+    PlayerDeath();
+    
+    for (int deathscreen = 0; deathscreen < 10; deathscreen++)
+    {
+        Console.WriteLine("");
+    }
+    Console.WriteLine("\t\t\tYour are Dead! Purely Skill Issue, Better Luck Next Time!");
+    for (int deathscreen = 0; deathscreen < 10; deathscreen++)
+    {
+        Console.WriteLine("");
+    }
+    int[] horrorNotes = { 300, 150, 280, 140, 200, 100, 70 };
+    int[] horrorDurations = { 150, 150, 150, 150, 200, 200, 600 };
+
+    for (int i = 0; i < horrorNotes.Length; i++)
+    {
+        Console.Beep(horrorNotes[i], horrorDurations[i]);
+        Thread.Sleep(20); 
+    }
+
+}
+
+
+static void HealthBar(int currenthealth, int freddyhealth)
+{
+    int healthcount = 0;
+    int freddyhealthcount = 0;
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.Write("HEALTH : ");
+
+    for (int i = 0; i < currenthealth; i++)
+    {
+        Console.Write($"\u2588 ");
+        healthcount++;
+    }
+    
+    for (; healthcount < 3; healthcount++)
+    {
+        Console.Write($"\u2591 ");
+    }
+
+    Console.Write("\t\t\t\t\t\t\t\t\t\tFreddy Health: ");
+
+    for (int i = 0; i < freddyhealth; i++)
+    {
+        Console.Write($"\u2588 ");
+        freddyhealthcount++;
+    }
+
+    for (; freddyhealthcount < 4; freddyhealthcount++)
+    {
+        Console.Write($"\u2591 ");
+    }
+
+
+    Console.ResetColor();
+}
+
+static void PnextQuestion()
+{
+    Console.WriteLine("Proceed to next question ? Press any button...");
+    Console.ReadKey();
+}
+
+static int Answer()
+{
+    int Answer = Convert.ToInt16(Console.ReadLine());
+    return Answer;
+}
+
+static void PlayerDeath( )
+{
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""`-'""}
+                                                                     (o o)
+                                                                     ,`Y'.
+                                                                    / ,-. \        
+          ~o                                                       (_)| |(_)
+          /|\                                                        /`_'\
+          /\                                                        (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player1 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                              {""`-'""}
+                                                                (o o)
+                                                                ,`Y'.
+                                                               / ,-. \        
+          ~o                                                 (_)| |(_)
+          /|\                                                   /`_'\
+          /\                                                   (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player1}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player2 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                     {""`-'""}
+                                                      (o o)
+                                                      ,`Y'.
+                                                     / ,-. \        
+          ~o                                        (_)| |(_)
+          /|\                                         /`_'\
+          /\                                         (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player2}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player3 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                          {""`-'""}
+                                           (o o)
+                                           ,`Y'.
+                                          / ,-. \        
+          ~o                             (_)| |(_)
+          /|\                              /`_'\
+          /\                              (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player3}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player4 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                 {""`-'""}
+                                  (o o)
+                                  ,`Y'.
+                                 / ,-. \        
+          ~o                    (_)| |(_)
+          /|\                     /`_'\
+          /\                     (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player4}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player5 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                        {""`-'""}
+                         (o o)
+                         ,`Y'.
+                        / ,-. \        
+          ~o           (_)| |(_)
+          /|\            /`_'\
+          /\            (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player5}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player6 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                  {""`-'""}
+                   (o o)
+                   ,`Y'.
+                  / ,-. \        
+          ~o     (_)| |(_)
+          /|\      /`_'\
+          /\      (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+
+    Console.WriteLine($"{player6}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+    Console.WriteLine("\t\t\tThe POWER IS OUT...\n");
+    string player7 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+          {""`-'""}
+           (o o)
+           ,`Y'.
+          / ,-. \        
+         (_)| |(_)
+           /`_'\
+          (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+
+    Console.WriteLine($"{player7}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(500));
+    Console.Clear();
+
+}
+
+static void PlayerWins()
+{
+    Console.Clear();
+    string player = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""`-'""}
+                                                                     (o o)
+                                                                     ,`Y'.
+                                                                    / ,-. \        
+          ~o                                                       (_)| |(_)
+          /|>                                                        /`_'\
+          /\                                                        (_) (_)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+    Console.Clear();
+
+    string player1 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""`-'""
+                                                                     (o o
+                                                                     ,`Y'
+                                                                    / ,-. \       
+          ~o                                                       (_)| |(_
+          /|>                                                        /`_'
+          /\                                                        (_) (_
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player1}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+    Console.Clear();
+
+    string player2 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""`-'
+                                                                     (o
+                                                                     ,`
+                                                                    / ,-.       
+          ~o                                                       (_)| |
+          /|>                                                        /`
+          /\                                                        (_) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player2}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+    Console.Clear();
+
+    string player3 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                    {""
+                                                                    
+                                                                    
+                                                                    /        
+          ~o                                                       (_)
+          /|>                                                       
+          /\                                                        (
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player3}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+    Console.Clear();
+
+    string player4 = @"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                                                   
+                                                                
+                                                                
+                                                                         
+          ~o                                                      
+          /|>                                                   
+          /\                                                     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+";
+    Console.WriteLine($"{player4}");
+    Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+    Console.Clear();
+
+}
+
+
+
+
+
+
+
+
+
+
+
